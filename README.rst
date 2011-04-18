@@ -1,5 +1,5 @@
-Introduction
----------------
+About Mobile Middleware
+-------------------------
 
 Mobile Middleware is a middleware for WSGI applications.
 
