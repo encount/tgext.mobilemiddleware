@@ -12,6 +12,15 @@ You will be able to see if your request is coming from a mobile browser with::
     from tg import request
     request.is_mobile
 
+Installing
+-------------------------------
+
+tgext.mobilemiddleware can be installed both from pypi or from bitbucket::
+
+    easy_install tgext.mobilemiddleware
+
+should just work for most of the users
+
 Enabling Mobile Agents Detection
 ----------------------------------
 
