@@ -31,7 +31,7 @@ Exposing Mobile Templates
 TurboGears2 decorator which can be used to specify which template to expose for mobie requests.
 
 This will work by registering a custom template renderer with 'mobile' custom format.
-*@expose_expose* supports the same template naming convention that @expose uses
+*@expose_mobile* supports the same template naming convention that @expose uses
 and can accept any rendering engine that has been registered in turbogears
 by specifing it as *engine:module.template_name* 
 
