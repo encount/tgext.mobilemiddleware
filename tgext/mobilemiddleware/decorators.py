@@ -1,6 +1,6 @@
 import tg
 from tg import request, config
-from tg.decorators import use_custom_format, Decoration
+from tg.decorators import override_template, Decoration
 
 class expose_mobile(object):
     def __init__(self, template, content_type='text/html'):
@@ -19,16 +19,14 @@ class expose_mobile(object):
 
     def hook_func(self, *args, **kwargs):
         if request.is_mobile:
-            use_custom_format(self.func, 'mobile')
-        else:
-            #currently turbogears needs to reset the custom_format at each request or it will
-            #use the last requested custom format for every request.
-            deco = Decoration.get_decoration(self.func)
-            deco.render_custom_format = None
+            try:
+                override_mapping = request._override_mapping
+            except:
+                override_mapping = request._override_mapping = {}
+            override_mapping[self.func] = {self.content_type:(self.engine, self.template, [])}
 
     def __call__(self, func):
         self.func = func
         deco = Decoration.get_decoration(func)
-        deco.register_custom_template_engine('mobile', self.content_type, self.engine, self.template, [])
         deco.register_hook('before_render', self.hook_func)
         return func
