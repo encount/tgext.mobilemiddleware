@@ -39,7 +39,8 @@ Exposing Mobile Templates
 **tgext.mobilemiddleware** implements a *@expose_mobile* decorator that works like *@expose*
 TurboGears2 decorator which can be used to specify which template to expose for mobie requests.
 
-This will work by registering a custom template renderer with 'mobile' custom format.
+This will work by switching the template before rendering the view if the request
+is detected to be from a mobile browser.
 *@expose_mobile* supports the same template naming convention that @expose uses
 and can accept any rendering engine that has been registered in turbogears
 by specifing it as *engine:module.template_name* 
