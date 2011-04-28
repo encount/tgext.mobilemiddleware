@@ -56,10 +56,9 @@ Examples::
 Customizing User Agents Detection
 -----------------------------------
 
-**MobileMiddleware** by default checks user agent with a regular expression
-that can be customized by changing *[app:main]* section of your configuration
-file by adding something like::
+**MobileMiddleware** by default checks user agent with a set of regular expressions defined in **DetectMobileBrowser**.  If you want to customize how mobile browsers are detected, you may create you own class, perhaps inheriting from **DetectMobileBrowser**, or callable object and supply it as an argument to **MobileMiddleware**, like::
 
-    mobile.agents = android|fennec|iemobile|iphone|ipod|ipad
+    return MobileMiddleware(app, app_conf, mobile_browser_detector=YourClass)
 
-
+Please not that the argument to mobile_browser_detector can also be a
+general functor.

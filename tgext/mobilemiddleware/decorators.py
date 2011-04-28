@@ -1,6 +1,5 @@
-import tg
 from tg import request, config
-from tg.decorators import override_template, Decoration
+from tg.decorators import Decoration
 
 class expose_mobile(object):
     def __init__(self, template, content_type='text/html'):
