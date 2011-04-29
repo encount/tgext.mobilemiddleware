@@ -19,7 +19,7 @@ setup(name='tgext.mobilemiddleware',
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Framework :: TurboGears"
         ],
-      keywords='turbogears pylons TG2',
+      keywords='turbogears2.extension pylons',
       author='Alessandro Molina',
       author_email='alessandro.molina@axant.it',
       url='http://bitbucket.org/_amol_/tgext.mobilemiddleware',

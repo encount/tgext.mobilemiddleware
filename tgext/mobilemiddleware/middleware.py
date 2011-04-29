@@ -50,6 +50,6 @@ class MobileMiddleware(object):
             
     def __call__(self, environ, start_response):
         request = Request(environ)
-        request.is_mobile = self.detect_mobile(request)
+        request.is_mobile = bool(self.detect_mobile(request))
         response = request.get_response(self.application)
         return response(environ, start_response)
