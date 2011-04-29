@@ -65,4 +65,4 @@ or callable object and supply it as an argument to **MobileMiddleware**, like::
     return MobileMiddleware(app, app_conf, mobile_browser_detector=YourClass)
 
 **DetectMobileBrowser** behaviour can be changed by any subclass by overridding the **DetectMobileBrowser.perform_detection** method.
-If user has defined a custom regular expression it will be available inside the *perform_dection* method as *self.custom_mobile_re*
+If user has defined a custom regular expression it will be available inside the *perform_detection* method as *self.custom_mobile_re*
