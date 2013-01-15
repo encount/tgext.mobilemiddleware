@@ -22,7 +22,7 @@ class expose_mobile(object):
                 override_mapping = request._override_mapping
             except:
                 override_mapping = request._override_mapping = {}
-            override_mapping[self.func] = {self.content_type:(self.engine, self.template, [])}
+            override_mapping[self.func] = {self.content_type:(self.engine, self.template, [], {})}
 
     def __call__(self, func):
         self.func = func
