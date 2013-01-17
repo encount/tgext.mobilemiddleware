@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.3'
+version = '0.4'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
@@ -29,6 +29,7 @@ setup(name='tgext.mobilemiddleware',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+        "TurboGears2 >= 2.2.0"
       ],
       entry_points="""
       # -*- Entry points: -*-
